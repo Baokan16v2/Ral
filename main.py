@@ -20,7 +20,7 @@ def parse_pdf_quiz(file_path):
     questions = []
     current_q = None
     
-    q_pattern = re.compile(r'^(\d+)\.\s*(.+)')
+    q_pattern = re.compile(r'^(\d+)\.(?!\d)\s*(.+)')
     opt_pattern = re.compile(r'^([a-zA-Z])\)\s*(.+)')
 
     for line in lines:
