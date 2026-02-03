@@ -85,15 +85,15 @@ def restart_quiz():
 
 # --- 3. INTERFAȚA PRINCIPALĂ ---
 def main():
-    st.set_page_config(page_title="Quiz TIA", page_icon="📝", layout="wide")
+    st.set_page_config(page_title="Quiz Conta", page_icon="📝", layout="wide")
     
     # Titlu principal
-    st.title("📝 Test Grilă TIA")
+    st.title("📝 Test Grilă Conta")
 
     # Inițializări Session State
     if 'questions' not in st.session_state:
         # Încearcă să citești fișierul. Asigură-te că test_TIA.pdf e lângă script.
-        raw_questions = parse_pdf_quiz("test_TIA.pdf")
+        raw_questions = parse_pdf_quiz(Grile_v3_corectate.pdf")
         if raw_questions:
             random.shuffle(raw_questions)
             st.session_state.questions = raw_questions
