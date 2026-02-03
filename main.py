@@ -93,7 +93,7 @@ def main():
     # Inițializări Session State
     if 'questions' not in st.session_state:
         # Încearcă să citești fișierul. Asigură-te că test_TIA.pdf e lângă script.
-        raw_questions = parse_pdf_quiz("Grile_v3_corectate_.pdf")
+        raw_questions = parse_pdf_quiz("Grile_Conta.pdf")
         if raw_questions:
             random.shuffle(raw_questions)
             st.session_state.questions = raw_questions
