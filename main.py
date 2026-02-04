@@ -55,8 +55,8 @@ def parse_pdf_quiz(file_path):
             if opt_match:
                 opt_text = opt_match.group(2)
                 # Verificăm marcajul ` pentru răspuns corect
-                is_correct = '`' in opt_text or '`' in line
-                clean_text = opt_text.replace('`', '').strip()
+                is_correct = '@' in opt_text or '@' in line
+                clean_text = opt_text.replace('@', '').strip()
                 
                 current_q["options"].append(clean_text)
                 if is_correct:
@@ -64,7 +64,7 @@ def parse_pdf_quiz(file_path):
             else:
                 # E o continuare a textului (ori la întrebare, ori la ultima opțiune)
                 if current_q["options"]:
-                    current_q["options"][-1] += " " + line.replace('`', '')
+                    current_q["options"][-1] += " " + line.replace('@', '')
                 else:
                     current_q["text"] += " " + line
 
